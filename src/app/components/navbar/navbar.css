@@ -1,0 +1,16 @@
+.navbar-container{
+    background-color: #F7F8FA;
+}
+
+.navbar-logo{
+    height: 32px;
+    width: 32px;
+}
+
+.navbar-ham-btn{
+    padding: 1px 4px 4px 4px;
+    .navbar-toggler-icon{
+        height: 16px;
+        width: 16px;
+    }
+}
