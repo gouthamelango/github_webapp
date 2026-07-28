@@ -1,0 +1,20 @@
+.footer-container{
+    color: #91979F;
+    font-size: 12px;
+    font-style: "Mona Sans", sans-serif;
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .footer-logo {
+        width: 23px;
+        height: 22.28px;
+
+    }
+}
