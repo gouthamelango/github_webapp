@@ -1,1 +1,25 @@
-<p>profile-tabs works!</p>
+<div class="container m-1 p-2">
+    @switch(selectedTab) {
+
+                @case('overview') {
+                    <app-overview></app-overview>
+                }
+
+                @case('repositories') {
+                    <app-repositories></app-repositories>
+                }
+
+                @case('projects') {
+                    <app-projects></app-projects>
+                }
+
+                @case('packages') {
+                    <app-packages></app-packages>
+                }
+
+                @case('stars') {
+                    <app-stars></app-stars>
+                }
+
+            }
+</div>

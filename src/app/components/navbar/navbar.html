@@ -12,7 +12,7 @@
         <div class="d-flex gap-2 justify-content-between align-items-center">
 
             <div class="d-flex align-items-center border rounded-3 px-3 py-2 navbar-search">
-                <i class="bi bi-search fs-5 text-secondary me-3"></i>   
+                <i class="bi bi-search fs-5 text-secondary me-3"></i>
                 <input type="text" class="form-control border-0 shadow-none p-0" placeholder="Type / to search">
             </div>
 
@@ -20,8 +20,8 @@
                 <button type="button" class="btn border navbar-btn">
                     <i class="bi bi-claude"></i>
                 </button>
-                <button type="button" class="btn dropdown-toggle dropdown-toggle-split border navbar-btn" id="dropdownMenuReference"
-                    data-bs-toggle="dropdown" aria-expanded="false">
+                <button type="button" class="btn dropdown-toggle dropdown-toggle-split border navbar-btn"
+                    id="dropdownMenuReference" data-bs-toggle="dropdown" aria-expanded="false">
                     <span class="visually-hidden">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
@@ -49,22 +49,23 @@
 
             <button type="button" class="btn border rounded-3 navbar-btn"><i class="bi bi-record-circle"></i></button>
             <button type="button" class="btn border rounded-3 navbar-btn"><i class="bi bi-git"></i></button>
-            <button type="button" class="btn border rounded-3 navbar-btn"><i class="bi bi-journal-bookmark"></i></button>
+            <button type="button" class="btn border rounded-3 navbar-btn"><i
+                    class="bi bi-journal-bookmark"></i></button>
 
             <img src="assets/logo/github_logo.svg" class="navbar-items">
         </div>
     </nav>
-    
+
     <ul class="nav nav-tabs border-0">
         <li class="nav-item">
-            <a class="nav-link active" href="#">
+            <a class="nav-link active" (click)="changeTab('overview')">
                 <i class="bi bi-book me-1"></i>
                 Overview
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" (click)="changeTab('repositories')">
                 <i class="bi bi-journal me-1"></i>
                 Repositories
                 <span class="badge rounded-pill bg-secondary ms-1">27</span>
@@ -72,25 +73,25 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link"  (click)="changeTab('projects')">
                 <i class="bi bi-grid me-1"></i>
                 Projects
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" (click)="changeTab('packages')">
                 <i class="bi bi-box me-1"></i>
                 Packages
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" (click)="changeTab('stars')">
                 <i class="bi bi-star me-1"></i>
                 Stars
             </a>
         </li>
     </ul>
-    
+
 </div>
