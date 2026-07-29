@@ -1,0 +1,44 @@
+.home-container {
+    flex: 1;
+    font-family: 'Mona Sans', sans-serif;
+}
+
+.home-logo {
+    width: 64px;
+    height: 64px;
+}
+
+.home-input {
+    width: 100%;
+    max-width: 280px;
+}
+
+.home-at {
+    background-color: #f6f8fa;
+    color: #57606a;
+    border-color: #d0d7de;
+    font-size: 14px;
+}
+
+.home-field {
+    border-color: #d0d7de;
+    font-size: 14px;
+    color: #24292F;
+}
+
+.home-field:focus {
+    border-color: #0969da;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15);
+}
+
+.home-btn {
+    background-color: #24292F;
+    color: #fff;
+    border-color: #24292F;
+    padding: 0 14px;
+}
+
+.home-btn:hover {
+    background-color: #393f47;
+    color: #fff;
+}

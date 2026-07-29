@@ -1,0 +1,20 @@
+<div class="home-container d-flex flex-column align-items-center justify-content-center gap-4">
+
+    <img src="assets/logo/github_logo.svg" alt="GitHub" class="home-logo">
+
+    <div class="input-group home-input">
+        <span class="input-group-text home-at">@</span>
+        <input
+            type="text"
+            class="form-control home-field"
+            placeholder="Username"
+            [(ngModel)]="username"
+            (keydown.enter)="navigate()"
+            autofocus
+        >
+        <button class="btn home-btn" (click)="navigate()">
+            <i class="bi bi-arrow-right"></i>
+        </button>
+    </div>
+
+</div>
