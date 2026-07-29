@@ -1,5 +1,5 @@
 <div>
-    <div class="overview-container d-flex justify-content-between gap-3 ">
+    <div class="overview-container d-flex justify-content-between gap-3">
         <p>Pinned</p>
         <a>Customize your pins</a>
     </div>
@@ -7,6 +7,7 @@
     <div *ngIf="repositories() as repositories" class="repo-grid">
         <app-repo-card *ngFor="let eachRepository of repositories" [repository]="eachRepository"></app-repo-card>
     </div>
+
     <div class="contribution-container my-2 py-2">
         <p>2,310 contributions in the last year</p>
         <div class="contribution-chart border p-2 rounded-2">
@@ -14,4 +15,12 @@
         </div>
     </div>
 
+    <div class="row border rounded-2 p-3 mt-2">
+        <div class="col-6">
+            <h6>Activity overview</h6>
+        </div>
+        <div class="col-6">
+             <app-radar-graph></app-radar-graph>
+        </div>
+    </div>
 </div>

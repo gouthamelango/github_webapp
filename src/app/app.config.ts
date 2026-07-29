@@ -4,9 +4,10 @@ import { provideHttpClient } from '@angular/common/http';
 
 import { provideEchartsCore } from 'ngx-echarts';
 import * as echarts from 'echarts/core';
-import { HeatmapChart } from 'echarts/charts';
+import { HeatmapChart, RadarChart } from 'echarts/charts';
 import {
   CalendarComponent,
+  RadarComponent,
   TooltipComponent,
   VisualMapComponent
 } from 'echarts/components';
@@ -14,7 +15,9 @@ import { CanvasRenderer } from 'echarts/renderers';
 
 echarts.use([
   CalendarComponent,
+  RadarComponent,
   HeatmapChart,
+  RadarChart,
   TooltipComponent,
   VisualMapComponent,
   CanvasRenderer

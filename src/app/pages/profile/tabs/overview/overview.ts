@@ -4,9 +4,10 @@ import { Graph } from '../../../../core/services/graph';
 import { RepoCard } from '../../components/repo-card/repo-card';
 import { CommonModule } from '@angular/common';
 import { ContibutionGraph } from '../../components/contibution-graph/contibution-graph';
+import { RadarGraph } from '../../components/radar-graph/radar-graph';
 @Component({
   selector: 'app-overview',
-  imports: [RepoCard, CommonModule, ContibutionGraph],
+  imports: [RepoCard, CommonModule, ContibutionGraph, RadarGraph],
   templateUrl: './overview.html',
   styleUrl: './overview.css',
 })
