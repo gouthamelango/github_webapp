@@ -1,0 +1,23 @@
+.repo-card-title {
+    font-family: 'Mona sans', sans-serif;
+    a{
+        font-size: 14px;
+        text-decoration: none;
+        color: #2277DE;
+        font-weight:600;
+    }
+
+}
+.repo-card-repo-badge{
+    color: #6a6d6f;
+    font-size: 12px;
+}
+
+.repo-card-description{
+    font-size: 12px;
+    font-family: 'Mona sans', sans-serif;
+}
+
+.repo-card-container{
+    max-width: 374px;
+}
