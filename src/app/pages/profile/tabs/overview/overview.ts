@@ -5,6 +5,26 @@ import { RepoCard } from '../../components/repo-card/repo-card';
 import { CommonModule } from '@angular/common';
 import { ContibutionGraph } from '../../components/contibution-graph/contibution-graph';
 import { RadarGraph } from '../../components/radar-graph/radar-graph';
+
+interface ActivityRepo {
+  name: string;
+  merged?: number;
+  open?: number;
+}
+
+interface ActivityItem {
+  icon: string;
+  title: string;
+  expanded: boolean;
+  repos?: ActivityRepo[];
+}
+
+interface ActivityGroup {
+  month: string;
+  year: string;
+  items: ActivityItem[];
+}
+
 @Component({
   selector: 'app-overview',
   imports: [RepoCard, CommonModule, ContibutionGraph, RadarGraph],
@@ -14,22 +34,64 @@ import { RadarGraph } from '../../components/radar-graph/radar-graph';
 export class Overview {
 
   private github = inject(Github);
-  private graph = inject(Graph)
+  private graph = inject(Graph);
 
-  @Input() githubUsername: String = ''
+  @Input() githubUsername: String = '';
   repositories = signal<any>(null);
   contributionData: { date: string; count: number; level: number }[] = [];
-  selectedYear: any = null
+  selectedYear: any = null;
   years: string[] = [
     '2026', '2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015'
-  ]
+  ];
+
+  activityGroups: ActivityGroup[] = [
+    {
+      month: 'October',
+      year: '2025',
+      items: [
+        {
+          icon: 'bi-box-arrow-up',
+          title: 'Created 56 commits in 11 repositories',
+          expanded: false,
+          repos: [
+            { name: 'UptimeAI/uptime_webapp' },
+            { name: 'UptimeAI/uptime_ml' },
+            { name: 'UptimeAI/uptime_scripts' },
+          ]
+        },
+        {
+          icon: 'bi-git',
+          title: 'Opened 29 pull requests in 5 repositories',
+          expanded: false,
+          repos: [
+            { name: 'UptimeAI/uptime_webapp', merged: 16, open: 1 },
+            { name: 'UptimeAI/uptime_ml', merged: 6 },
+            { name: 'UptimeAI/uptime_scripts', merged: 4 },
+            { name: 'UptimeAI/uptime_engine', merged: 1 },
+            { name: 'UptimeAI/uptime_ml_encrypted', merged: 1 },
+          ]
+        }
+      ]
+    },
+    {
+      month: 'September',
+      year: '2025',
+      items: [
+        {
+          icon: 'bi-lock',
+          title: '228 contributions in private repositories',
+          expanded: false,
+        }
+      ]
+    }
+  ];
 
   ngOnInit() {
-    this.github.getUseRepositories(this.githubUsername).subscribe((response: any)=>{
-      const transformedResponse = response.splice(0,6)
-      this.repositories.set(transformedResponse)
-    })
-    this.getContributionChart()
+    this.github.getUseRepositories(this.githubUsername).subscribe((response: any) => {
+      const transformedResponse = response.splice(0, 6);
+      this.repositories.set(transformedResponse);
+    });
+    this.getContributionChart();
   }
 
   getContributionChart() {
@@ -37,8 +99,9 @@ export class Overview {
       this.contributionData = response.contributions;
     });
   }
+
   changeYear(year: string) {
-    this.selectedYear = year
-    this.getContributionChart()
+    this.selectedYear = year;
+    this.getContributionChart();
   }
 }
