@@ -1,6 +1,32 @@
 .navbar-container{
     background-color: #F7F8FA;
 }
+.nav-profile-name{
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Mona Sans', sans-serif;
+    padding : 4px;
+}
+
+.nav-profile-name:hover{
+    background-color: #EAEDF0;
+    border-radius: 4px;
+}
+
+.navbar-search{
+    width: 200px;
+    height: 32px;
+
+    input{
+        cursor: inherit;
+        font-size: 14px;
+        font-family: 'Mona Sans', sans-serif;
+    }
+}
+
+.navbar-search:hover{
+    cursor: pointer;
+}
 
 .navbar-logo{
     height: 32px;
