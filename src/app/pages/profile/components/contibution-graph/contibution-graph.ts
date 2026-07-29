@@ -18,7 +18,7 @@ export class ContibutionGraph implements OnChanges {
 
   @Input() contributions: Contribution[] = [];
 
-  options: EChartsOption = {};
+  options: EChartsOption | null = null;
 
   ngOnChanges(): void {
     if (!this.contributions.length) return;

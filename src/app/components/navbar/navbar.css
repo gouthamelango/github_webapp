@@ -1,54 +1,69 @@
-.navbar-container{
+.navbar-container {
     background-color: #F7F8FA;
 }
-.nav-profile-name{
+
+.nav-profile-name {
     font-size: 14px;
     font-weight: 600;
     font-family: 'Mona Sans', sans-serif;
-    padding : 4px;
+    padding: 4px;
 }
 
-.nav-profile-name:hover{
+.nav-profile-name:hover {
     background-color: #EAEDF0;
     border-radius: 4px;
 }
 
-.navbar-search{
+.navbar-search {
     width: 200px;
     height: 35px;
 
-    input{
+    input {
         cursor: inherit;
         font-size: 14px;
         font-family: 'Mona Sans', sans-serif;
     }
 }
 
-.navbar-items{
-    width : 32px;
-    height : 32px;
+.navbar-items {
+    width: 32px;
+    height: 32px;
 }
 
-.navbar-search:hover{
+.navbar-search:hover {
     cursor: pointer;
 }
 
-
-.navbar-ham-btn{
+.navbar-ham-btn {
     padding: 1px 4px 4px 4px;
-    .navbar-toggler-icon{
+
+    .navbar-toggler-icon {
         height: 16px;
         width: 16px;
     }
 }
 
-.navbar-btn:hover{
+.navbar-btn:hover {
     background-color: #EAEDF0;
-
 }
 
-.nav-link{
+.nav-link {
     color: #24292F;
     font-size: 14px;
     font-family: 'Mona Sans', sans-serif;
+}
+
+.navbar-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.navbar-tabs .nav-item {
+    flex-shrink: 0;
+}
+
+@media (max-width: 575px) {
+    .nav-profile-name {
+        display: none;
+    }
 }
