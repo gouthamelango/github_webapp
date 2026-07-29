@@ -4,11 +4,14 @@
         <a>Customize your pins</a>
     </div>
 
-    <div *ngIf="repositories() as repositories" class="repo-container d-flex flex-wrap">
-        <div *ngFor="let eachRepository of repositories">
-            <app-repo-card [repository]="eachRepository"></app-repo-card>
+    <div *ngIf="repositories() as repositories" class="repo-grid">
+        <app-repo-card *ngFor="let eachRepository of repositories" [repository]="eachRepository"></app-repo-card>
+    </div>
+    <div class="contribution-container my-2 py-2">
+        <p>2,310 contributions in the last year</p>
+        <div class="contribution-chart border p-2 rounded-2">
+            <app-contibution-graph [contributions]="contributionData"></app-contibution-graph>
         </div>
-
     </div>
 
 </div>
