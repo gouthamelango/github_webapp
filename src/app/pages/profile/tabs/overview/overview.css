@@ -54,7 +54,6 @@
   display: none;
 }
 
-/* ── Contribution Activity ─────────────────────────────── */
 .contribution-activity {
     font-family: 'Mona sans', sans-serif;
     font-size: 14px;
@@ -92,7 +91,7 @@
     opacity: 1;
 }
 
-/* Timeline */
+
 .ca-timeline {
     border-left: 2px solid #d0d7de;
     margin-left: 12px;
@@ -145,7 +144,7 @@
     }
 }
 
-/* Repo sub-rows */
+
 .ca-repos {
     border-left: 2px solid #d0d7de;
     margin-left: 4px;
@@ -170,7 +169,7 @@
     }
 }
 
-/* Badges */
+
 .ca-badge {
     display: inline-flex;
     align-items: center;
@@ -190,7 +189,6 @@
     color: #fff;
 }
 
-/* Show more button */
 .ca-show-more {
     background: #f6f8fa;
     color: #0969da;
@@ -204,7 +202,7 @@
     }
 }
 
-/* Footer note */
+
 .ca-footer-note {
     font-size: 13px;
     color: #57606a;
@@ -215,11 +213,11 @@
 
         &:hover {
             text-decoration: underline;
+            cursor : pointer;
         }
     }
 }
 
-/* Mobile: constrain timeline width */
 @media (max-width: 991px) {
     .ca-item-title {
         font-size: 13px;

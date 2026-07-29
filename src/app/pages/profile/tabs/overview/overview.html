@@ -9,125 +9,127 @@
     </div>
 
     <p>2,310 contributions in the last year</p>
-    <div class="row">
-        <div class="col-12 col-lg-10 border rounded-2">
-            <div class="col-12">
-                <app-contibution-graph [contributions]="contributionData()"></app-contibution-graph>
-            </div>
-            <hr />
-            <div class="row">
-                <div class="col-12 col-lg-6 activity-container">
-                    <h6>Activity overview</h6>
-                    <div class="d-flex gap-1 mt-3">
-                        <i class="bi bi-journal-bookmark"></i>
-                        <p>
-                            Contributed to <span>Uptime/uptime_webapp</span>,
-                            <span>Uptime/uptime_server</span>,
-                            <span>Uptime/uptime_ml</span>
-                            and 13 other repositories
-                        </p>
+    <div class="row mx-0">
+        <div class="col-12 col-lg-10 p-0 ">
+            <div class="border rounded-2 p-2">
+                <div class="col-12 ">
+                    <app-contibution-graph [contributions]="contributionData()"></app-contibution-graph>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-12 col-lg-6 activity-container">
+                        <h6>Activity overview</h6>
+                        <div class="d-flex gap-1 mt-3">
+                            <i class="bi bi-journal-bookmark"></i>
+                            <p>
+                                Contributed to <span>Uptime/uptime_webapp</span>,
+                                <span>Uptime/uptime_server</span>,
+                                <span>Uptime/uptime_ml</span>
+                                and 13 other repositories
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-auto px-0 d-none d-lg-block">
+                        <div class="vr h-100"></div>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <app-radar-graph></app-radar-graph>
                     </div>
                 </div>
-                <div class="col-auto px-0 d-none d-lg-block">
-                    <div class="vr h-100"></div>
-                </div>
-                <div class="col-12 col-lg-5">
-                    <app-radar-graph></app-radar-graph>
-                </div>
+
             </div>
+            <div class="contribution-activity mt-4">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="ca-title mb-0">Contribution activity</h5>
+
+                    <div class="dropdown d-lg-none">
+                        <button class="btn btn-sm border dropdown-toggle ca-year-dropdown" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Year: {{ selectedYear }}
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li *ngFor="let year of years; let i = index">
+                                <button class="dropdown-item" [class.active]="selectedYear === year"
+                                    (click)="changeYear(year)">
+                                    {{ year }}
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div *ngFor="let group of activityGroups" class="ca-month-group">
+
+                    <div class="ca-month-header d-flex align-items-center gap-3 mb-3">
+                        <span class="ca-month-label">
+                            <strong>{{ group.month }}</strong> {{ group.year }}
+                        </span>
+                        <hr class="flex-grow-1 m-0">
+                    </div>
+
+                    <div class="ca-timeline">
+                        <div *ngFor="let item of group.items" class="ca-item">
+
+                            <div class="ca-icon-wrap">
+                                <i [class]="'bi ' + item.icon + ' ca-icon'"></i>
+                            </div>
+
+                            <div class="ca-item-content flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <span class="ca-item-title">{{ item.title }}</span>
+                                    <button class="btn btn-sm ca-expand-btn" type="button"
+                                        (click)="item.expanded = !item.expanded" [attr.aria-expanded]="item.expanded">
+                                        <i class="bi" [class.bi-arrows-expand]="!item.expanded"
+                                            [class.bi-arrows-collapse]="item.expanded"></i>
+                                    </button>
+                                </div>
+
+                                <div *ngIf="item.expanded && item.repos" class="ca-repos mt-2">
+                                    <div *ngFor="let repo of item.repos"
+                                        class="ca-repo-row d-flex justify-content-between align-items-center py-1">
+                                        <span class="ca-repo-name">{{ repo.name }}</span>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span *ngIf="repo.merged" class="ca-badge ca-badge-merged">{{ repo.merged }}
+                                                merged</span>
+                                            <span *ngIf="repo.open" class="ca-badge ca-badge-open">{{ repo.open }}
+                                                open</span>
+                                            <button class="btn btn-sm ca-expand-btn" type="button">
+                                                <i class="bi bi-arrows-expand"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <button type="button" class="btn w-100 border ca-show-more mt-3">
+                    <span class="ca-show-more-text">Show more activity</span>
+                </button>
+
+                <p class="ca-footer-note mt-3">
+                    Seeing something unexpected? Take a look at the
+                    <a >GitHub profile guide</a>.
+                </p>
+            </div>
+
         </div>
-
-
         <div class="col-2 d-none d-lg-block">
             <div class="year-picker overflow-auto">
                 <div class="list-group">
                     <div *ngFor="let year of years; let i = index" class="overview-year">
                         <button type="button" class="list-group-item list-group-item-action border-0 rounded mb-2"
-                            [class.active]="selectedYear === year"
-                            (click)="changeYear(year)">
+                            [class.active]="selectedYear === year" (click)="changeYear(year)">
                             {{ year }}
                         </button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="contribution-activity mt-4">
-
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="ca-title mb-0">Contribution activity</h5>
-
-            <div class="dropdown d-lg-none">
-                <button class="btn btn-sm border dropdown-toggle ca-year-dropdown" type="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Year: {{ selectedYear }}
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li *ngFor="let year of years; let i = index">
-                        <button class="dropdown-item"
-                            [class.active]="selectedYear === year"
-                            (click)="changeYear(year)">
-                            {{ year }}
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div *ngFor="let group of activityGroups" class="ca-month-group">
-
-            <div class="ca-month-header d-flex align-items-center gap-3 mb-3">
-                <span class="ca-month-label">
-                    <strong>{{ group.month }}</strong> {{ group.year }}
-                </span>
-                <hr class="flex-grow-1 m-0">
-            </div>
-
-            <div class="ca-timeline">
-                <div *ngFor="let item of group.items" class="ca-item">
-
-                    <div class="ca-icon-wrap">
-                        <i [class]="'bi ' + item.icon + ' ca-icon'"></i>
-                    </div>
-
-                    <div class="ca-item-content flex-grow-1">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <span class="ca-item-title">{{ item.title }}</span>
-                            <button class="btn btn-sm ca-expand-btn" type="button"
-                                (click)="item.expanded = !item.expanded"
-                                [attr.aria-expanded]="item.expanded">
-                                <i class="bi" [class.bi-arrows-expand]="!item.expanded" [class.bi-arrows-collapse]="item.expanded"></i>
-                            </button>
-                        </div>
-
-                        <div *ngIf="item.expanded && item.repos" class="ca-repos mt-2">
-                            <div *ngFor="let repo of item.repos" class="ca-repo-row d-flex justify-content-between align-items-center py-1">
-                                <span class="ca-repo-name">{{ repo.name }}</span>
-                                <div class="d-flex align-items-center gap-2">
-                                    <span *ngIf="repo.merged" class="ca-badge ca-badge-merged">{{ repo.merged }} merged</span>
-                                    <span *ngIf="repo.open" class="ca-badge ca-badge-open">{{ repo.open }} open</span>
-                                    <button class="btn btn-sm ca-expand-btn" type="button">
-                                        <i class="bi bi-arrows-expand"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-        <button type="button" class="btn w-100 border ca-show-more mt-3">
-            <span class="ca-show-more-text">Show more activity</span>
-        </button>
-
-        <p class="ca-footer-note mt-3">
-            Seeing something unexpected? Take a look at the
-            <a href="https://docs.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile" target="_blank">GitHub profile guide</a>.
-        </p>
     </div>
 
 </div>
