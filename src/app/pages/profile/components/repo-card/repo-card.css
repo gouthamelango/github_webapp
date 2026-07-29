@@ -33,3 +33,17 @@
     min-height: 110px;
     box-sizing: border-box;
 }
+
+.repo-card-language {
+    font-size: 12px;
+    font-family: 'Mona sans', sans-serif;
+    color: #57606a;
+}
+
+.lang-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
