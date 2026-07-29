@@ -46,23 +46,19 @@ export class Overview {
 
   activityGroups: ActivityGroup[] = [
     {
-      month: 'October',
-      year: '2025',
+      month: 'July',
+      year: '2026',
       items: [
         {
           icon: 'bi-box-arrow-up',
           title: 'Created 56 commits in 11 repositories',
           expanded: false,
-          repos: [
-            { name: 'UptimeAI/uptime_webapp' },
-            { name: 'UptimeAI/uptime_ml' },
-            { name: 'UptimeAI/uptime_scripts' },
-          ]
+          repos: []
         },
         {
           icon: 'bi-git',
           title: 'Opened 29 pull requests in 5 repositories',
-          expanded: false,
+          expanded: true,
           repos: [
             { name: 'UptimeAI/uptime_webapp', merged: 16, open: 1 },
             { name: 'UptimeAI/uptime_ml', merged: 6 },
@@ -74,8 +70,8 @@ export class Overview {
       ]
     },
     {
-      month: 'September',
-      year: '2025',
+      month: 'June',
+      year: '2026',
       items: [
         {
           icon: 'bi-lock',

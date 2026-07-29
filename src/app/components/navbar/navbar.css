@@ -65,6 +65,12 @@
 
 .navbar-tabs .nav-item {
     flex-shrink: 0;
+    cursor: pointer;
+}
+
+.navbar-badge{
+    background-color: #EAEDF0;
+    color: #24292F;
 }
 
 @media (max-width: 575px) {
