@@ -29,7 +29,9 @@
                     <li><a class="dropdown-item" href="#">Action</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
                     <li><a class="dropdown-item" href="#">Separated link</a></li>
                 </ul>
             </div>
@@ -46,7 +48,9 @@
                     <li><a class="dropdown-item" href="#">New repository</a></li>
                     <li><a class="dropdown-item" href="#">Import repository</a></li>
                     <li><a class="dropdown-item" href="#">New gist</a></li>
-                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
                     <li><a class="dropdown-item" href="#">New organization</a></li>
                 </ul>
             </div>
@@ -64,39 +68,40 @@
             <img src="assets/images/avatar.png" class="navbar-items rounded-circle">
         </div>
     </nav>
-
-    <ul class="nav nav-tabs border-0 navbar-tabs">
-        <li class="nav-item">
-            <a class="nav-link active" (click)="changeTab('overview')">
-                <i class="bi bi-book me-1"></i>
-                Overview
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" (click)="changeTab('repositories')">
-                <i class="bi bi-journal me-1"></i>
-                Repositories
-                <span class="badge rounded-pill navbar-badge ms-1">27</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" (click)="changeTab('projects')">
-                <i class="bi bi-grid me-1"></i>
-                Projects
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" (click)="changeTab('packages')">
-                <i class="bi bi-box me-1"></i>
-                Packages
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" (click)="changeTab('stars')">
-                <i class="bi bi-star me-1"></i>
-                Stars
-                <span class="badge rounded-pill navbar-badge ms-1">5</span>
-            </a>
-        </li>
-    </ul>
+    <div *ngIf="githubUsername()">
+        <ul class="nav nav-tabs border-0 navbar-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" (click)="changeTab('overview')">
+                    <i class="bi bi-book me-1"></i>
+                    Overview
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="changeTab('repositories')">
+                    <i class="bi bi-journal me-1"></i>
+                    Repositories
+                    <span class="badge rounded-pill navbar-badge ms-1">27</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="changeTab('projects')">
+                    <i class="bi bi-grid me-1"></i>
+                    Projects
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="changeTab('packages')">
+                    <i class="bi bi-box me-1"></i>
+                    Packages
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="changeTab('stars')">
+                    <i class="bi bi-star me-1"></i>
+                    Stars
+                    <span class="badge rounded-pill navbar-badge ms-1">5</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
