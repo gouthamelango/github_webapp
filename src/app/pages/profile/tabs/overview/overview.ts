@@ -12,24 +12,33 @@ import { RadarGraph } from '../../components/radar-graph/radar-graph';
   styleUrl: './overview.css',
 })
 export class Overview {
-    
+
   private github = inject(Github);
   private graph = inject(Graph)
-  
-  @Input() githubUsername:String = ''
+
+  @Input() githubUsername: String = ''
   repositories = signal<any>(null);
   contributionData: { date: string; count: number; level: number }[] = [];
+  selectedYear: any = null
+  years: string[] = [
+    '2026', '2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015'
+  ]
 
   ngOnInit() {
     this.github.getUseRepositories(this.githubUsername).subscribe((response: any)=>{
       const transformedResponse = response.splice(0,6)
       this.repositories.set(transformedResponse)
     })
+    this.getContributionChart()
+  }
 
-    this.graph.getContributionGraph(this.githubUsername).subscribe((response: any) => {
+  getContributionChart() {
+    this.graph.getContributionGraph(this.githubUsername, this.selectedYear ? this.selectedYear : 'all').subscribe((response: any) => {
       this.contributionData = response.contributions;
     });
-    
-
+  }
+  changeYear(year: string) {
+    this.selectedYear = year
+    this.getContributionChart()
   }
 }

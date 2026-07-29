@@ -25,8 +25,8 @@
                         <i class="bi bi-journal-bookmark"></i>
                         <p>
                             Contributed to <span>Uptime/uptime_webapp</span>,
-                             <span>Uptime/uptime_server</span>,
-                              <span>Uptime/uptime_ml</span>
+                            <span>Uptime/uptime_server</span>,
+                            <span>Uptime/uptime_ml</span>
                             and
                             13 other repositories
                         </p>
@@ -43,32 +43,21 @@
         <div class="col-2">
             <div class="year-picker overflow-auto">
                 <div class="list-group">
-                    <button type="button" class="list-group-item list-group-item-action active rounded mb-2">
-                        2026
-                    </button>
 
-                    <button type="button" class="list-group-item list-group-item-action border-0">
-                        2025
-                    </button>
+                    <div *ngFor="let year of years; let i = index" class="overview-year">
+                        <button type="button" class="list-group-item list-group-item-action border-0 rounded mb-2"
+                            [class.active]="(i === 0 && selectedYear === null) || selectedYear === year"
+                            (click)="changeYear(year)"
+                            >
+                            {{ year }}
+                        </button>
+                    </div>
 
-                    <button type="button" class="list-group-item list-group-item-action border-0">
-                        2024
-                    </button>
-
-                    <button type="button" class="list-group-item list-group-item-action border-0">
-                        2023
-                    </button>
-
-                    <button type="button" class="list-group-item list-group-item-action border-0">
-                        2022
-                    </button>
-
-                    <button type="button" class="list-group-item list-group-item-action border-0">
-                        2021
-                    </button>
                 </div>
             </div>
         </div>
     </div>
 
 </div>
+
+<!-- <div [class]="{'btn-primary': isPrimary, 'disabled': isDisabled}">Object format</div> -->

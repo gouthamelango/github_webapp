@@ -40,5 +40,16 @@
     span:hover{
         text-decoration: underline;
     }
+}
 
+.overview-year{
+    font-size: 14px;
+    font-family: "Mona sans", sans-serif;
+}
+
+.year-picker{
+    height: 500px;
+}
+.year-picker::-webkit-scrollbar {
+  display: none;
 }
