@@ -11,17 +11,31 @@
 
     <p>2,310 contributions in the last year</p>
     <div class="row">
-        <div class="col-lg-10 col-sm-12">
+        <div class="col-lg-10 border rounder-2 col-sm-12">
             <div class="row">
                 <div class="col-12">
                     <app-contibution-graph [contributions]="contributionData"></app-contibution-graph>
                 </div>
             </div>
+            <hr />
             <div class="row">
-                <div class="col-lg-6 col-sm-12">
+                <div class="col-lg-6 col-sm-12 activity-container">
                     <h6>Activity overview</h6>
+                    <div class="d-flex gap-1 mt-3">
+                        <i class="bi bi-journal-bookmark"></i>
+                        <p>
+                            Contributed to <span>Uptime/uptime_webapp</span>,
+                             <span>Uptime/uptime_server</span>,
+                              <span>Uptime/uptime_ml</span>
+                            and
+                            13 other repositories
+                        </p>
+                    </div>
                 </div>
-                <div class="col-lg-6 col-sm-12">
+                <div class="col-auto px-0">
+                    <div class="vr h-100"></div>
+                </div>
+                <div class="col-lg-5 col-sm-12">
                     <app-radar-graph></app-radar-graph>
                 </div>
             </div>

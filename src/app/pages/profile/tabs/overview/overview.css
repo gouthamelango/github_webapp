@@ -28,6 +28,17 @@
     }
 }
 
-.contribution-chart{
+.activity-container{
+    font-size: 14px;
+    font-family: "Mona sans", sans-serif;
+
+    span{
+        color: #2277DE;
+        cursor: pointer;
+        font-weight: 600;
+    }
+    span:hover{
+        text-decoration: underline;
+    }
 
 }
