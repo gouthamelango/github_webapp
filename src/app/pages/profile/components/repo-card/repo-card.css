@@ -4,7 +4,13 @@
         font-size: 14px;
         text-decoration: none;
         color: #2277DE;
-        font-weight:600;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        min-width: 0;
+        max-width: 256px;
+        display: block;
     }
 }
 
