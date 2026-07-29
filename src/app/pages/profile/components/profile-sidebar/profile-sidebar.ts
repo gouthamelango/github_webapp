@@ -1,6 +1,8 @@
-import { Component, signal, Input } from '@angular/core';
+import { Component, signal, Input, inject } from '@angular/core';
 import { Github } from '../../../../core/services/github';
 import { CommonModule } from '@angular/common';
+import { catchError, EMPTY } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-sidebar',
@@ -9,14 +11,22 @@ import { CommonModule } from '@angular/common';
   styleUrl: './profile-sidebar.css',
 })
 export class ProfileSidebar {
-  
-  constructor(private github : Github){}
+
+  constructor(private github: Github) { }
+
   user = signal<any>(null);
 
-  @Input() githubUsername:String = ''
-  
-  ngOnInit(){
-    this.github.getUserData(this.githubUsername).subscribe((response)=>{
+  private router = inject(Router)
+  @Input() githubUsername: String = ''
+
+  ngOnInit() {
+    this.github.getUserData(this.githubUsername).pipe(catchError(error => {
+      if (error.status === 404) {
+        this.router.navigate(['404'])
+      }
+      return EMPTY;
+    })
+    ).subscribe((response) => {
       console.log(response)
       this.user.set(response)
     })
