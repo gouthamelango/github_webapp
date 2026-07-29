@@ -16,7 +16,6 @@ export class Profile {
 
   ngOnInit(){
     this.route.params.subscribe((params)=>{
-      console.log(params['username'])
       this.githubUsername.set(params['username'])
     })
   }

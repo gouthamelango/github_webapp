@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, signal } from '@angular/core';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -9,15 +10,31 @@ import { Router } from '@angular/router';
 })
 export class Navbar {
 
-  
-  // @Input() selectedTab = 'overview';
-  constructor(private router : Router) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
-  changeTab(tab :  String){
+  githubUsername = signal<string>('');
+
+  changeTab(tab: String) {
     this.router.navigate([], {
-      queryParams : {tab},
-      queryParamsHandling : 'merge'
-    })
+      queryParams: { tab },
+      queryParamsHandling: 'merge'
+    });
   }
 
+  ngOnInit() {
+    this.readUsername();
+
+    this.router.events
+      .pipe(filter(e => e instanceof NavigationEnd))
+      .subscribe(() => this.readUsername());
+  }
+
+  private readUsername() {
+    const child = this.route.firstChild;
+    if (child) {
+      child.params.subscribe(params => {
+        this.githubUsername.set(params['username'] ?? '');
+      });
+    }
+  }
 }
