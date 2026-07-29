@@ -1,8 +1,12 @@
-.footer-container{
+.footer-container {
     color: #91979F;
     font-size: 12px;
     font-style: "Mona Sans", sans-serif;
-    
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 16px 12px;
+    row-gap: 6px;
+
     a {
         text-decoration: none;
         color: inherit;
@@ -15,6 +19,5 @@
     .footer-logo {
         width: 23px;
         height: 22.28px;
-
     }
 }

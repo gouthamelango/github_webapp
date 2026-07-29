@@ -57,6 +57,9 @@
     flex-wrap: nowrap;
     overflow-x: auto;
 }
+.navbar-tabs::-webkit-scrollbar {
+  display: none;
+}
 
 .navbar-tabs .nav-item {
     flex-shrink: 0;

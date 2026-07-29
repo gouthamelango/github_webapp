@@ -17,9 +17,15 @@
 
 .repo-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 8px;
     margin-bottom: 16px;
+}
+
+@media (min-width: 992px) {
+    .repo-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .contribution-chart{
