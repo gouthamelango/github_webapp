@@ -4,14 +4,11 @@
         <a>Customize your pins</a>
     </div>
 
-    <div class="repo-container d-flex flex-wrap">
-        <app-repo-card></app-repo-card>
-        <app-repo-card></app-repo-card>
-        <app-repo-card></app-repo-card>
-        <app-repo-card></app-repo-card>
-        <app-repo-card></app-repo-card>
-        <app-repo-card></app-repo-card>
-        <app-repo-card></app-repo-card>
+    <div *ngIf="repositories() as repositories" class="repo-container d-flex flex-wrap">
+        <div *ngFor="let eachRepository of repositories">
+            <app-repo-card [repository]="eachRepository"></app-repo-card>
+        </div>
+
     </div>
 
 </div>

@@ -9,4 +9,8 @@ export class Github {
     getUserData(username:String) {
         return this.http.get(`${this.baseUrl}/${username}`)
     }
+
+    getUseRepositories(username:String){
+        return this.http.get(`${this.baseUrl}/${username}/repos`)
+    }
 }
