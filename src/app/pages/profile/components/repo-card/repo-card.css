@@ -20,4 +20,7 @@
 
 .repo-card-container{
     max-width: 374px;
+    min-width: 374px;
+    min-height: 128px;
+    max-height: 128px;
 }
