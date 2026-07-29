@@ -190,15 +190,15 @@
 }
 
 .ca-show-more {
-    background: #f6f8fa;
     color: #0969da;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 12px;
     border-radius: 8px;
     padding: 12px;
+    font-family: 'Mona sans', sans-serif;
 
     &:hover {
-        background: #eef1f4;
+        background: #eff0f1;
     }
 }
 

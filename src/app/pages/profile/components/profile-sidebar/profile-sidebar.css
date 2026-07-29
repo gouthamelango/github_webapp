@@ -17,6 +17,13 @@
 }
 
 .profile-bio-items{
+    min-width: 0;
+    overflow: hidden;
+
+    a, p {
+        word-break: break-all;
+        overflow-wrap: break-word;
+    }
     a{
         text-decoration: none;
         color: #000;
@@ -30,6 +37,13 @@
 .sidebar-container{
     font-size: 14px;
     font-family: 'Mona sans', sans-serif;
+    
+    h5{
+        font-size: 24px;
+        font-style: 'Mona Sans', sans-serif;
+        font-weight: 600;
+        margin-bottom: 0px;
+    }
 }
 
 .sidebar-profile-image-mobile {
@@ -38,4 +52,29 @@
     object-fit: cover;
     border-radius: 50%;
     flex-shrink: 0;
+}
+.sidebar-user-login-id{
+    font-size: 20px;
+    font-family: 'Mona Sans', sans-serif;
+    color: #59636e;
+}
+
+.sidebar-user-bio{
+    font-size: 16px;
+    font-family: 'Mona Sans', sans-serif;
+}
+
+.sidebar-followers {
+    font-size: 14px;
+    font-family: 'Mona Sans', sans-serif;
+    color: #59636e;
+    align-items: center;
+
+    strong {
+        color: #1b1f23;
+    }
+}
+
+.sidebar-followers-dot {
+    color: #59636e;
 }

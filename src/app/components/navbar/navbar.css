@@ -12,6 +12,7 @@
 .nav-profile-name:hover {
     background-color: #EAEDF0;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .navbar-search {
@@ -22,6 +23,7 @@
         cursor: inherit;
         font-size: 14px;
         font-family: 'Mona Sans', sans-serif;
+        background-color: inherit;
     }
 }
 
