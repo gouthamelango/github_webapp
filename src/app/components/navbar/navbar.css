@@ -46,3 +46,9 @@
     background-color: #EAEDF0;
 
 }
+
+.nav-link{
+    color: #24292F;
+    font-size: 14px;
+    font-family: 'Mona Sans', sans-serif;
+}

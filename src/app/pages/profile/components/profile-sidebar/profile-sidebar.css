@@ -1,0 +1,33 @@
+.sidebar-profile-image {
+    width: 100%;
+    max-width: 296px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.edit-profile-btn{
+    font-size: 14px;
+    font-style: 'Mona Sans', sans-serif;
+    background-color: #F7F8FA;
+}
+.edit-profile-btn:hover{
+    background-color: #EAEDF0;
+}
+
+.profile-bio-items{
+    a{
+        text-decoration: none;
+        color: #000;
+    }
+    a:hover {
+        text-decoration: underline;
+        color: #0969da;
+    }
+}
+
+.sidebar-container{
+    font-size: 14px;
+    font-family: 'Mona sans', sans-serif;
+}
