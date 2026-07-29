@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, Input, signal } from '@angular/core';
 import { Github } from '../../../../core/services/github';
 import { Graph } from '../../../../core/services/graph';
 import { RepoCard } from '../../components/repo-card/repo-card';
@@ -16,15 +16,17 @@ export class Overview {
   private github = inject(Github);
   private graph = inject(Graph)
   
+  @Input() githubUsername:String = ''
   repositories = signal<any>(null);
   contributionData: { date: string; count: number; level: number }[] = [];
 
   ngOnInit() {
-    this.github.getUseRepositories('shreeramk').subscribe((response)=>{
-      this.repositories.set(response)
+    this.github.getUseRepositories(this.githubUsername).subscribe((response: any)=>{
+      const transformedResponse = response.splice(0,6)
+      this.repositories.set(transformedResponse)
     })
 
-    this.graph.getContributionGraph('shreeramk').subscribe((response: any) => {
+    this.graph.getContributionGraph(this.githubUsername).subscribe((response: any) => {
       this.contributionData = response.contributions;
     });
     

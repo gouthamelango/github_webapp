@@ -2,7 +2,7 @@
     @switch(selectedTab()) {
 
                 @case('overview') {
-                    <app-overview></app-overview>
+                    <app-overview [githubUsername]="githubUsername"></app-overview>
                 }
 
                 @case('repositories') {

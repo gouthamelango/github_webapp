@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {Overview} from '../../tabs/overview/overview'
 import { Repositories } from '../../tabs/repositories/repositories';
@@ -15,6 +15,7 @@ import { Stars } from '../../tabs/stars/stars';
 export class ProfileTabs {
 
   selectedTab = signal('overview');
+  @Input() githubUsername:string = ''
   constructor(private route : ActivatedRoute) {}
 
     ngOnInit(){
