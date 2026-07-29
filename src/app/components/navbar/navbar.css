@@ -15,7 +15,7 @@
 
 .navbar-search{
     width: 200px;
-    height: 32px;
+    height: 35px;
 
     input{
         cursor: inherit;
@@ -24,14 +24,15 @@
     }
 }
 
+.navbar-items{
+    width : 32px;
+    height : 32px;
+}
+
 .navbar-search:hover{
     cursor: pointer;
 }
 
-.navbar-logo{
-    height: 32px;
-    width: 32px;
-}
 
 .navbar-ham-btn{
     padding: 1px 4px 4px 4px;

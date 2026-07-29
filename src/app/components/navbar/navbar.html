@@ -1,24 +1,26 @@
 <div class="navbar-container">
     <nav class="navbar d-flex justify-content-between align-items-center p-3">
-        <div class="d-flex gap-3 justify-content-between align-items-center">
+        <div class="d-flex gap-2 justify-content-between align-items-center">
             <button class="navbar-toggler navbar-ham-btn" type="button" data-toggle="collapse"
                 data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <img src="assets/logo/github_logo.svg" class="navbar-logo">
+            <img src="assets/logo/github_logo.svg" class="navbar-items">
             <div class="nav-profile-name">gouthamelango</div>
         </div>
-        <div class="d-flex gap-3 justify-content-between align-items-center">
+        <div class="d-flex gap-2 justify-content-between align-items-center">
 
             <div class="d-flex align-items-center border rounded-3 px-3 py-2 navbar-search">
                 <i class="bi bi-search fs-5 text-secondary me-3"></i>   
                 <input type="text" class="form-control border-0 shadow-none p-0" placeholder="Type / to search">
             </div>
 
-            <div class="btn-group">
-                <button type="button" class="btn btn-danger">Action</button>
-                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+            <div class="btn-group rounded-3">
+                <button type="button" class="btn border">
+                    <i class="bi bi-claude"></i>
+                </button>
+                <button type="button" class="btn dropdown-toggle dropdown-toggle-split border" id="dropdownMenuReference"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <span class="visually-hidden">Toggle Dropdown</span>
                 </button>
@@ -33,10 +35,10 @@
                 </ul>
             </div>
 
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+            <div class="dropdown border rounded-3 ">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button
+                    <i class="bi bi-plus"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -45,11 +47,11 @@
                 </ul>
             </div>
 
-            <button type="button" class="btn btn-primary">Primary</button>
-            <button type="button" class="btn btn-primary">Primary</button>
-            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn border rounded-3"><i class="bi bi-record-circle"></i></button>
+            <button type="button" class="btn border rounded-3"><i class="bi bi-git"></i></button>
+            <button type="button" class="btn border rounded-3"><i class="bi bi-journal-bookmark"></i></button>
 
-            <img src="assets/logo/github_logo.svg" class="navbar-logo">
+            <img src="assets/logo/github_logo.svg" class="navbar-items">
         </div>
     </nav>
     <ul class="nav nav-tabs border-0">
