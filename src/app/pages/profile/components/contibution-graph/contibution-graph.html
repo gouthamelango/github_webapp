@@ -1,5 +1,5 @@
 <div class="heatmap-scroll-wrapper">
   @if (options) {
-    <div echarts [options]="options" class="heatmap"></div>
+    <div echarts [options]="options" class="heatmap" (chartInit)="onChartInit($event)"></div>
   }
 </div>

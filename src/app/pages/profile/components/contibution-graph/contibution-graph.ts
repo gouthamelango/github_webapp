@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, NgZone } from '@angular/core';
 import { NgxEchartsDirective } from 'ngx-echarts';
 import { EChartsOption } from 'echarts';
 
@@ -19,6 +19,18 @@ export class ContibutionGraph implements OnChanges {
   @Input() contributions: Contribution[] = [];
 
   options: EChartsOption | null = null;
+  private chartInstance: any = null;
+
+  constructor(private ngZone: NgZone) {}
+
+  onChartInit(chart: any) {
+    this.chartInstance = chart;
+    if (this.options) {
+      this.ngZone.runOutsideAngular(() => {
+        setTimeout(() => this.chartInstance.resize(), 0);
+      });
+    }
+  }
 
   ngOnChanges(): void {
     if (!this.contributions.length) return;
@@ -98,5 +110,11 @@ export class ContibutionGraph implements OnChanges {
         }
       ]
     };
+
+    if (this.chartInstance) {
+      this.ngZone.runOutsideAngular(() => {
+        setTimeout(() => this.chartInstance.resize(), 0);
+      });
+    }
   }
 }
