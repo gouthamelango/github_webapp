@@ -41,3 +41,8 @@
         width: 16px;
     }
 }
+
+.navbar-btn:hover{
+    background-color: #EAEDF0;
+
+}
