@@ -8,12 +8,12 @@
         <app-repo-card *ngFor="let eachRepository of repositories" [repository]="eachRepository"></app-repo-card>
     </div>
 
-    <p>2,310 contributions in the last year</p>
+    <p>{{contributionCount()}} contributions in {{selectedYear}}</p>
     <div class="row mx-0">
         <div class="col-12 col-lg-10 p-0 ">
             <div class="border rounded-2 p-2">
                 <div class="col-12 ">
-                    <app-contibution-graph [contributions]="contributionData()"></app-contibution-graph>
+                    <app-contibution-graph [contributions]="contributionData()" [selectedYear]="selectedYear"></app-contibution-graph>
                 </div>
                 <hr />
                 <div class="row">

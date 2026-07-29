@@ -39,6 +39,7 @@ export class Overview {
   @Input() githubUsername: String = '';
   repositories = signal<any>(null);
   contributionData = signal<{ date: string; count: number; level: number }[]>([]);
+  contributionCount = signal<number>(0);
   years: string[] = [
     '2026', '2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015'
   ];
@@ -93,6 +94,7 @@ export class Overview {
   getContributionChart() {
     this.graph.getContributionGraph(this.githubUsername, this.selectedYear ? this.selectedYear : 'all').subscribe((response: any) => {
       this.contributionData.set(response.contributions);
+      this.contributionCount.set(response.total[this.selectedYear] ?? 0)
     });
   }
 
