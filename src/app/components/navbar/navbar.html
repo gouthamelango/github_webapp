@@ -71,32 +71,32 @@
     <div *ngIf="githubUsername()">
         <ul class="nav nav-tabs border-0 navbar-tabs">
             <li class="nav-item">
-                <a class="nav-link active" (click)="changeTab('overview')">
+                <a class="nav-link" (click)="changeTab('overview')" [class.active]="selectedTab() === 'overview'">
                     <i class="bi bi-book me-1"></i>
                     Overview
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" (click)="changeTab('repositories')">
+                <a class="nav-link" (click)="changeTab('repositories')" [class.active]="selectedTab() === 'repositories'">
                     <i class="bi bi-journal me-1"></i>
                     Repositories
                     <span class="badge rounded-pill navbar-badge ms-1">27</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" (click)="changeTab('projects')">
+                <a class="nav-link" (click)="changeTab('projects')" [class.active]="selectedTab() === 'projects'">
                     <i class="bi bi-grid me-1"></i>
                     Projects
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" (click)="changeTab('packages')">
+                <a class="nav-link" (click)="changeTab('packages')" [class.active]="selectedTab() === 'packages'">
                     <i class="bi bi-box me-1"></i>
                     Packages
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" (click)="changeTab('stars')">
+                <a class="nav-link" (click)="changeTab('stars')" [class.active]="selectedTab() === 'stars'">
                     <i class="bi bi-star me-1"></i>
                     Stars
                     <span class="badge rounded-pill navbar-badge ms-1">5</span>

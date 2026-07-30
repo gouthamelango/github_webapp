@@ -14,8 +14,10 @@ export class Navbar {
   constructor(private router: Router, private route: ActivatedRoute) {}
 
   githubUsername = signal<string>('');
+  selectedTab = signal<String>('overview')
 
   changeTab(tab: String) {
+    this.selectedTab.set(tab);
     this.router.navigate([], {
       queryParams: { tab },
       queryParamsHandling: 'merge'
