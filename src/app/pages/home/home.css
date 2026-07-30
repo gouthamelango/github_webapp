@@ -42,3 +42,16 @@
     background-color: #393f47;
     color: #fff;
 }
+
+.home-heading {
+    font-size: 22px;
+    font-weight: 600;
+    color: #24292F;
+    margin-bottom: 6px;
+}
+
+.home-subtext {
+    font-size: 14px;
+    color: #57606a;
+    margin-bottom: 0;
+}

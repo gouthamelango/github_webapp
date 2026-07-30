@@ -32,6 +32,10 @@ export class Navbar {
       .subscribe(() => this.readUsername());
   }
 
+  goHome() {
+    this.router.navigate(['/']);
+  }
+
   private readUsername() {
     const child = this.route.firstChild;
     if (child) {
