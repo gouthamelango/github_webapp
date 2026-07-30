@@ -78,3 +78,48 @@
 .sidebar-followers-dot {
     color: #59636e;
 }
+
+.sidebar-divider {
+    border-color: #d0d7de;
+    margin: 16px 0;
+}
+
+.sidebar-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Mona Sans', sans-serif;
+    color: #24292F;
+    margin-bottom: 0;
+}
+
+.achievement-badge {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.achievement-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.15s ease;
+}
+
+.achievement-img:hover {
+    transform: scale(1.08);
+}
+
+
+.sidebar-report-link {
+    font-size: 12px;
+    font-family: 'Mona Sans', sans-serif;
+    color: #57606a;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidebar-report-link:hover {
+    color: #0969da;
+    text-decoration: underline;
+}
